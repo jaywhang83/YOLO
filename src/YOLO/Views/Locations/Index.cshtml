@@ -6,18 +6,31 @@
 }
 
 <h2>YOLO</h2>
+  
+<table class="table">
+    <tr>
+        <th>
+        <th></th>
+            <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+        </th>
+    </tr>
 
-<hr />
-
-  <h4>@Html.DisplayNameFor(model => model.Name)</h4>
-<ul>
     @foreach (var listItem in Model)
     {
-        <li>@Html.DisplayFor(modelItem => listItem.Name) | @Html.ActionLink("Details", "Details", new { id = listItem.LocationId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.LocationId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.LocationId })</li>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listItem.LocationId }) |
+                @Html.ActionLink("Details", "Details", new { id = listItem.LocationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.LocationId })
+            </td>
+        </tr>
     }
-</ul>
-
+</table>
 <hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create") | @Html.ActionLink("Go back Home", "Index", "Home")
 </p>
+

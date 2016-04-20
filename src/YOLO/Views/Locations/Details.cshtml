@@ -1,0 +1,16 @@
+﻿@model YOLO.Models.Location
+
+@{
+    ViewData["Title"] = "Location - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Loction Details</h2>
+<hr />
+
+<hr />
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>

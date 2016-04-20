@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using YOLO.Models;
 using Microsoft.Data.Entity;
-
+using Microsoft.AspNet.Mvc.Rendering;
 
 namespace YOLO.Controllers
 {
@@ -25,6 +25,7 @@ namespace YOLO.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             return View();
         }
 
@@ -39,6 +40,7 @@ namespace YOLO.Controllers
         public IActionResult Edit(int id)
         {
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             return View(thisExperience);
         }
 

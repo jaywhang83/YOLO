@@ -1,0 +1,18 @@
+﻿@model YOLO.Models.Location
+
+@{
+    ViewData["Title"] = "Location - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Are you sure you want to delete this?</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+    <hr />
+    @using (Html.BeginForm())
+        
+    {
+        <input type="submit" value="Delete" />
+    }
+    <hr />
+    @Html.ActionLink("Back to List", "Index")
