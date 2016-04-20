@@ -1,0 +1,23 @@
+﻿@model YOLO.Models.Location
+
+@{
+    ViewData["Title"] = "YOLO";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Create a Location</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>@Html.LabelFor(model => model.Name)</p>
+    <p>@Html.EditorFor(model => model.Name)</p>
+
+    <p>@Html.LabelFor(Model => Model.Description)</p>
+    <p>@Html.EditorFor(model => model.Description)</p>
+
+    <p>@Html.LabelFor(Model => Model.Images)</p>
+    <p>@Html.EditorFor(model => model.Images)</p>
+
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+@Html.ActionLink("Back to list", "Index")

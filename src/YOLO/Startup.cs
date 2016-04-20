@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,24 +24,28 @@ namespace YOLO
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<YOLODbContext>(options =>
                 options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
-
-            services.AddMvc();
         }
 
         
         public void Configure(IApplicationBuilder app)
         {
             app.UseIISPlatformHandler();
+
+            app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");

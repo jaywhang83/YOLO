@@ -1,0 +1,23 @@
+﻿@model IEnumerable<YOLO.Models.Location>
+
+@{
+    ViewData["Title"] = "STO";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>YOLO</h2>
+
+<hr />
+
+  <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+<ul>
+    @foreach (var listItem in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listItem.Name) | @Html.ActionLink("Details", "Details", new { id = listItem.LocationId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.LocationId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.LocationId })</li>
+    }
+</ul>
+
+<hr />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

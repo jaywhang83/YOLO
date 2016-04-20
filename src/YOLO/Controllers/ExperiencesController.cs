@@ -14,7 +14,7 @@ namespace YOLO.Controllers
         private YOLODbContext db = new YOLODbContext();
         public IActionResult Index()
         {
-            return View(db.Experiences.ToList());
+            return View(db.Experiences.Include(experiences => experiences.Location).ToList());
         }
 
         public IActionResult Details(int id)

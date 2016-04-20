@@ -8,10 +8,15 @@ namespace YOLO.Models
 {
     public class YOLODbContext : DbContext
     {
-        public DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
 
-        public DbSet<Experience> Experiences { get; set; }
+        public virtual DbSet<Experience> Experiences { get; set; }
 
-        public DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=YOLO;integrated security = True");
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace YOLO.Controllers
         private YOLODbContext db = new YOLODbContext();
         public IActionResult Index()
         {
-            return View(db.Persons.ToList());
+            return View(db.Persons.Include(persons => persons.Experience).ToList());
         }
 
         public IActionResult Details(int id)
