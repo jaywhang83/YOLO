@@ -8,9 +8,10 @@ using YOLO.Models;
 namespace YOLO.Migrations
 {
     [DbContext(typeof(YOLODbContext))]
-    partial class YOLODbContextModelSnapshot : ModelSnapshot
+    [Migration("20160420172252_MakeTableNamesPlural")]
+    partial class MakeTableNamesPlural
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
