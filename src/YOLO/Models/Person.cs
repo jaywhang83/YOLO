@@ -6,13 +6,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace YOLO.Models
 {
-    public class Experience
+    public class Person
     {
         [Key]
-        public int ExperinceId { get; set; }
-        public string Description { get; set; }
+        public int PersonId { get; set; }
+        public string Name { get; set; }
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
-        public virtual ICollection<Person> Persons { get; set; } 
+        public int ExperienceId { get; set; }
+        public virtual Experience Experience { get; set; }
     }
 }
