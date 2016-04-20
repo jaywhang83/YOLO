@@ -13,4 +13,25 @@
 <p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 
+<hr />
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
+
+hr />
+<p> @Html.DisplayNameFor(model => model.Experiences)</p>
+
+@*<table class="table">
+    @foreach (var experience in Model.Experiences)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => experience.Name)
+            </td>
+        </tr>
+    }
+</table>*@
+<hr />
+
+
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>

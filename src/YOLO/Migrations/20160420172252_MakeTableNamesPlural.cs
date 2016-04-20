@@ -39,7 +39,7 @@ namespace YOLO.Migrations
                 table: "Persons",
                 column: "ExperienceId",
                 principalTable: "Experiences",
-                principalColumn: "ExperinceId",
+                principalColumn: "ExperienceId",
                 onDelete: ReferentialAction.Cascade);
         }
 
@@ -61,7 +61,7 @@ namespace YOLO.Migrations
                 table: "Person",
                 column: "ExperienceId",
                 principalTable: "Experience",
-                principalColumn: "ExperinceId",
+                principalColumn: "ExperienceId",
                 onDelete: ReferentialAction.Restrict);
             migrationBuilder.RenameTable(
                 name: "Persons",
