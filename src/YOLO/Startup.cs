@@ -22,7 +22,7 @@ namespace YOLO
         {
             services.AddEntityFramework()
                 .AddSqlServer()
-                .AddDbContext<ToDoDbContext>(options =>
+                .AddDbContext<YOLODbContext>(options =>
                 options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
 
             services.AddMvc();

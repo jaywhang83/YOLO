@@ -10,6 +10,7 @@ namespace YOLO.Models
     {
         [Key]
         public int ExperinceId { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
