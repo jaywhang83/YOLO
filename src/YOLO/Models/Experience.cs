@@ -11,7 +11,7 @@ namespace YOLO.Models
     public class Experience
     {
         [Key]
-        public int ExperinceId { get; set; }
+        public int ExperienceId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
