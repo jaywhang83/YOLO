@@ -50,7 +50,7 @@ namespace YOLO.Controllers
         {
             db.Entry(experience).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
 
         public IActionResult Delete(int id)
@@ -65,7 +65,7 @@ namespace YOLO.Controllers
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
             db.Experiences.Remove(thisExperience);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
     }
 }
