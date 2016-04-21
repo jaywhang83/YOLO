@@ -34,7 +34,7 @@ namespace YOLO.Controllers
         {
             db.Persons.Add(person);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
 
         public IActionResult Edit(int id)
@@ -49,7 +49,7 @@ namespace YOLO.Controllers
         {
             db.Entry(person).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
 
         public IActionResult Delete(int id)
@@ -64,7 +64,7 @@ namespace YOLO.Controllers
             var thisPerson = db.Persons.FirstOrDefault(persons => persons.PersonId == id);
             db.Persons.Remove(thisPerson);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
     }
 }

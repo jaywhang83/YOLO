@@ -9,8 +9,9 @@
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>
 <hr />
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
-<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
 <p>@Html.DisplayNameFor(model => model.Image):<br /> <img src=@Html.DisplayFor(model => model.Image)></p>
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
 
 <hr />
 <p>@Html.DisplayNameFor(model => model.Experiences):</p>
@@ -21,16 +22,23 @@
         <tr>
             <td>
                <p>@Html.DisplayNameFor(model => experience.Name):@Html.DisplayFor(modelItem => experience.Name)</p>
-                
-                <p>@Html.DisplayNameFor(model => experience.Description): @Html.DisplayFor(model => experience.Description)</p>
                 <p>@Html.DisplayNameFor(model => experience.Image): <br /> <img src=@Html.DisplayFor(model => experience.Image)></p>
-               @Html.ActionLink("Edit", "Edit", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Delete", "Delete", "Experiences", new { id = experience.ExperienceId })
+                <p>@Html.DisplayNameFor(model => experience.Description): @Html.DisplayFor(model => experience.Description)</p>
+                
+               @Html.ActionLink("Edit", "Edit", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Delete", "Delete", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Add New Person", "Create", "Persons")
+
             </td>
-            
+           <td>
+               @foreach (var person in experience.Persons)
+               {
+
+                <p>@Html.DisplayNameFor(model => person.Name):@Html.DisplayFor(modelItem => person.Name)</p>
+
+                <p>@Html.DisplayNameFor(model => person.Description): @Html.DisplayFor(model => person.Description)</p>
+
+               }
+           </td>
         </tr>
     }
 </table>
 <hr />
-
-
-

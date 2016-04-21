@@ -1,0 +1,24 @@
+﻿@model YOLO.Models.Person
+
+@{
+    ViewData["Title"] = "YOLO";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Create a Person</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>@Html.LabelFor(model => model.Name)</p>
+    <p>@Html.EditorFor(model => model.Name)</p>
+
+    <p>@Html.LabelFor(Model => Model.Description)</p>
+    <p>@Html.TextAreaFor(model => model.Description, new { @class = "form-control" })</p>
+
+    <p>@Html.LabelFor(model => model.ExperienceId)</p>
+    <p>>@Html.DropDownList("ExperienceId")</p>
+
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+<hr />
+@Html.ActionLink("Back to list", "Index", "Locations")
