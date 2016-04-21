@@ -3,11 +3,39 @@
     margin-left: 20px;
 }
 
-img {
-    height: 300px;
-    width: 300px;
-}
 
 .form-control {
     width: 50%;
+}
+
+
+.indexBody {
+    background-image: url("../../Images/irish.jpg");  
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.content {
+    height: 55em;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    
+}
+
+ #title, #link {
+   margin: 0;
+   font-size: 50px;
+   font-weight: bolder; 
+   font-family: 'Audiowide', cursive;
+   color: rgba(248, 248, 255, 0.8);
+   text-shadow: black 0.1em 0.2em 0.4em;
+   text-align: center; 
+   vertical-align: middle; 
+}
+
+div.text {
+    margin-top: 30%; 
 }

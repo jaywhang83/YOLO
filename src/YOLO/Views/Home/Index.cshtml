@@ -4,10 +4,14 @@
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <title>YOLO</title>
 </head>
-<body>
-    <h2>You Only Live Once!</h2>
-    <hr />
-    <p>@Html.ActionLink("Go to list of Locations", "Index", "Locations")</p>
+<body class="indexBody">
+    <div class="content">
+        <div class="text">
+            <h2 id="title">You Only Live Once!</h2>
+            <br />
+            <p id="link">@Html.ActionLink("Go to list of Locations", "Index", "Locations")</p>
+        </div>
+    </div>
 </body>
 
 </html>

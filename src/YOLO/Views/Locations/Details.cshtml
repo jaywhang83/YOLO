@@ -9,7 +9,7 @@
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>
 <hr />
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
-<p>@Html.DisplayNameFor(model => model.Image):<br /> <img src=@Html.DisplayFor(model => model.Image)></p>
+<p>@Html.DisplayNameFor(model => model.Image):<br /> <img src=@Html.DisplayFor(model => model.Image) width = "300"></p>
 <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
 
 
@@ -18,11 +18,11 @@
 
 <table class="table">
     @foreach (var experience in Model.Experiences)
-    {
+    { 
         <tr>
             <td>
                <p>@Html.DisplayNameFor(model => experience.Name):@Html.DisplayFor(modelItem => experience.Name)</p>
-                <p>@Html.DisplayNameFor(model => experience.Image): <br /> <img src=@Html.DisplayFor(model => experience.Image)></p>
+                <p>@Html.DisplayNameFor(model => experience.Image): <br /> <img src=@Html.DisplayFor(model => experience.Image) width = "300"></p>
                 <p>@Html.DisplayNameFor(model => experience.Description): @Html.DisplayFor(model => experience.Description)</p>
                 
                @Html.ActionLink("Edit", "Edit", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Delete", "Delete", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Add New Person", "Create", "Persons")
@@ -36,8 +36,7 @@
 
                 <p>@Html.DisplayNameFor(model => person.Description): @Html.DisplayFor(model => person.Description)</p>
 
-                <p>@Html.ActionLink("Delete", "Delete", "Persons", new { id = person.PersonId }) |
-                @Html.ActionLink("Edit", "Edit", "Persons", new { id = person.PersonId })</p>
+                <p>@Html.ActionLink("Delete", "Delete", "Persons", new { id = person.PersonId }) | @Html.ActionLink("Edit", "Edit", "Persons", new { id = person.PersonId })</p>
 
                }
            </td>
