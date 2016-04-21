@@ -10,7 +10,7 @@
 <hr />
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
-<p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
+<p>@Html.DisplayNameFor(model => model.Image):<br /> <img src=@Html.DisplayFor(model => model.Image)></p>
 
 <hr />
 <p> @Html.DisplayNameFor(model => model.Experiences):</p>
@@ -20,8 +20,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => experience.Name)
+               <p>@Html.DisplayNameFor(model => experience.Name):@Html.DisplayFor(modelItem => experience.Name)</p>
+                
+                <p>@Html.DisplayNameFor(model => experience.Description): @Html.DisplayFor(model => experience.Description)</p>
+                <p>@Html.DisplayNameFor(model => experience.Image): <br /> <img src=@Html.DisplayFor(model => experience.Image)></p>
             </td>
+
         </tr>
     }
 </table>
