@@ -36,8 +36,8 @@
 
                 <p>@Html.DisplayNameFor(model => person.Description): @Html.DisplayFor(model => person.Description)</p>
 
-                @Html.ActionLink("Delete", "Delete", "Persons", new { id = person.PersonId })
-                @Html.ActionLink("Edit", "Edit", "Persons", new { id = person.PersonId })
+                <p>@Html.ActionLink("Delete", "Delete", "Persons", new { id = person.PersonId }) |
+                @Html.ActionLink("Edit", "Edit", "Persons", new { id = person.PersonId })</p>
 
                }
            </td>
