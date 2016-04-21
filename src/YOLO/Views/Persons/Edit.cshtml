@@ -1,4 +1,4 @@
-﻿@model YOLO.Models.Experience
+﻿@model YOLO.Models.Person
 
 @{
     ViewData["Title"] = "YOLO";
@@ -7,11 +7,11 @@
 
     <h2>Edit</h2>
     <hr />
-    <h4>Edit this Experience: @Html.DisplayFor(model => model.Name)</h4>
+    <h4>Edit this Person: @Html.DisplayFor(model => model.Name)</h4>
 
     @using (Html.BeginForm())
     {
-        @Html.HiddenFor(model => model.ExperienceId)
+        @Html.HiddenFor(model => model.PersonId)
 
         <p>@Html.LabelFor(model => model.Name)</p>
         <p>@Html.EditorFor(model => model.Name)</p>
@@ -19,11 +19,8 @@
         <p>@Html.LabelFor(Model => Model.Description)</p>
         <p>@Html.TextAreaFor(model => model.Description, new { @class = "form-control" })</p>
 
-        <p>@Html.LabelFor(Model => Model.Image)</p>
-        <p>@Html.EditorFor(model => model.Image)</p>
-
-        <p>@Html.LabelFor(model => model.LocationId)</p>
-        <p>>@Html.DropDownList("LocationId")</p>
+        <p>@Html.LabelFor(model => model.ExperienceId)</p>
+        <p>>@Html.DropDownList("ExperienceId")</p>
 
         <input type="submit" value="Save" />
     }
