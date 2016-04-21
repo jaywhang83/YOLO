@@ -13,11 +13,12 @@
     <p>@Html.EditorFor(model => model.Name)</p>
 
     <p>@Html.LabelFor(Model => Model.Description)</p>
-    <p>@Html.EditorFor(model => model.Description)</p>
+    <p>@Html.TextAreaFor(model => model.Description, new { @class = "form-control" })</p>
 
     <p>@Html.LabelFor(Model => Model.Images)</p>
     <p>@Html.EditorFor(model => model.Images)</p>
 
     <input type="submit" value="Create" class="btn btn-default" />
 }
+<hr />
 @Html.ActionLink("Back to list", "Index")

@@ -6,22 +6,16 @@
 }
 <h2>Loction Details</h2>
 <hr />
-
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>
 <hr />
 <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
 <p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
 
 <hr />
-<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
-<p>@Html.DisplayNameFor(model => model.Images):<br /> <img src=@Html.DisplayFor(model => model.Images)></p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p> @Html.DisplayNameFor(model => model.Experiences):</p>
 
-hr />
-<p> @Html.DisplayNameFor(model => model.Experiences)</p>
-
-@*<table class="table">
+<table class="table">
     @foreach (var experience in Model.Experiences)
     {
         <tr>
@@ -30,8 +24,8 @@ hr />
             </td>
         </tr>
     }
-</table>*@
+</table>
 <hr />
 
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>
+
