@@ -20,6 +20,7 @@ namespace YOLO.Controllers
         public IActionResult Details(int id)
         {
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            thisExperience.Persons = db.Persons.Where(x => x.PersonId == id).ToList(); 
             return View(thisExperience);
         }
 
@@ -34,7 +35,7 @@ namespace YOLO.Controllers
         {
             db.Experiences.Add(experience);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Locations");
         }
 
         public IActionResult Edit(int id)

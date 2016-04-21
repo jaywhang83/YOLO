@@ -26,7 +26,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = listItem.LocationId }) |
                 @Html.ActionLink("Details", "Details", new { id = listItem.LocationId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = listItem.LocationId })
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.LocationId }) |
+                @Html.ActionLink("Add New Experience", "Create", "Experiences")
             </td>
         </tr>
     }

@@ -1,11 +1,11 @@
-﻿@model YOLO.Models.Location
+﻿@model YOLO.Models.Experience
 
 @{
     ViewData["Title"] = "YOLO";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Create a Location</h4>
+<h4>Create a Experience</h4>
 <hr />
 @using (Html.BeginForm())
 {
@@ -18,8 +18,10 @@
     <p>@Html.LabelFor(Model => Model.Image)</p>
     <p>@Html.EditorFor(model => model.Image)</p>
 
+    <p>@Html.LabelFor(model => model.LocationId)</p>
+    <p>>@Html.DropDownList("LocationId")</p>
 
     <input type="submit" value="Create" class="btn btn-default" />
 }
 <hr />
-@Html.ActionLink("Back to list", "Index")
+@Html.ActionLink("Back to list", "Index", "Locations")
