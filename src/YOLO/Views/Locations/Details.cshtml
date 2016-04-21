@@ -24,7 +24,7 @@
                 
                 <p>@Html.DisplayNameFor(model => experience.Description): @Html.DisplayFor(model => experience.Description)</p>
                 <p>@Html.DisplayNameFor(model => experience.Image): <br /> <img src=@Html.DisplayFor(model => experience.Image)></p>
-                @Html.ActionLink("Delete", "Delete", "Experiences", new { id = experience.ExperienceId })
+               @Html.ActionLink("Edit", "Edit", "Experiences", new { id = experience.ExperienceId }) | @Html.ActionLink("Delete", "Delete", "Experiences", new { id = experience.ExperienceId })
             </td>
             
         </tr>
