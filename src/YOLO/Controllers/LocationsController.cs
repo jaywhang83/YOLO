@@ -19,7 +19,7 @@ namespace YOLO.Controllers
         public IActionResult Details(int id)
         {
             var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
-            thisLocation.Experiences = db.Experiences.Where(x => x.LocationId == id).Include(p => p.Persons).ToList();
+            thisLocation.Experiences = db.Experiences.Where(x => x.LocationId == id).Include(p => p.Persons).ToList(); //need .Include to grab persons from experiences database relationship
             return View(thisLocation);
         }
 
